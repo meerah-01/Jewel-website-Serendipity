@@ -1,0 +1,101 @@
+.jewels{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 10px 40px 10px;
+}
+.jewels-head{
+  padding: 10px;
+  text-align: center;
+}
+.explore{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-content: center;
+}
+.display, .blurry{
+  display: flex;
+  flex-direction: column;
+  position:relative;
+}
+.display img{
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+  transition: filter 0.35s ease;
+}
+.blur{
+  padding: 10px 5px 5px 5px;
+}
+.blurry img{
+  object-fit: cover;
+  width: 100%;
+  height: 280px;
+  filter: blur(4px) brightness(50%);
+}
+.blurry p:nth-child(1){
+  margin-top: -50px;
+  font-weight: bolder;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}
+.overlay, .cover{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white; 
+}
+.type{
+  font-weight: bolder;
+  font-size: 20px;
+  text-shadow: 2px 2px 2px black;
+}
+.desc{
+  opacity: 0;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: italic;
+  width: 90%;
+  text-align: center;
+}
+.detail{
+  margin-top: 30px;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: italic;
+  width: 50%;
+  text-align: center;
+}
+.desc{
+  transition: opacity 0.35s ease;
+}
+.display:hover img{
+  filter: blur(4px) brightness(60%);
+}
+.display:hover .desc{
+   opacity: 1;
+}
+
+@media (max-width: 900px){
+  .explore{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px){
+  .explore{
+    grid-template-columns: 1fr;
+  }
+  .blurry p:nth-child(1){
+  margin-top: -90px;
+  }
+  .detail{
+    margin-top: 50px;
+    width: 70%;
+  }
+}
